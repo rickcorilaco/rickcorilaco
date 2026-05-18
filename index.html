@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Henrique G. Corilaço — Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f5f2;
+      --text: #1a1a1a;
+      --muted: #888;
+      --accent: #c8a96e;
+      --card-bg: #ffffff;
+      --border: #e8e4df;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 4rem;
+      background: rgba(247,245,242,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      animation: fadeDown 0.6s ease both;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 4rem 6rem 4rem;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 400px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+      padding: 0.85rem 2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      color: var(--text);
+      padding: 0.85rem 2rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      animation: fadeIn 1s 0.4s ease both;
+    }
+
+    .hero-visual {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #e8e2d8 0%, #d4c9b8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8a96e' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-card {
+      background: white;
+      border-radius: 4px;
+      padding: 2rem;
+      width: 300px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #a8834e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-card-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .stat {
+      background: var(--bg);
+      border-radius: 2px;
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ARTICLES */
+    .section {
+      padding: 6rem 4rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .section-link {
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .section-link:hover { text-decoration: underline; }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .article-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .article-card:nth-child(1) { animation-delay: 0.1s; }
+    .article-card:nth-child(2) { animation-delay: 0.2s; }
+    .article-card:nth-child(3) { animation-delay: 0.3s; }
+
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .article-thumb {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .article-thumb.t1 { background: linear-gradient(135deg, #f0ebe3, #e0d5c5); }
+    .article-thumb.t2 { background: linear-gradient(135deg, #e3eaf0, #c5d5e0); }
+    .article-thumb.t3 { background: linear-gradient(135deg, #e3f0e8, #c5e0cc); }
+
+    .article-body { padding: 1.5rem; }
+
+    .article-tag {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* SOCIAL */
+    .social-section {
+      background: var(--text);
+      color: white;
+      padding: 6rem 4rem;
+      text-align: center;
+    }
+
+    .social-section .section-title {
+      color: white;
+      margin-bottom: 0.75rem;
+    }
+
+    .social-desc {
+      color: rgba(255,255,255,0.5);
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+
+    .social-grid {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .social-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+      padding: 1rem 1.75rem;
+      text-decoration: none;
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.2s;
+      min-width: 180px;
+    }
+
+    .social-card:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .social-icon {
+      font-size: 1.3rem;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      padding: 6rem 4rem;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .newsletter-text { flex: 1; }
+
+    .newsletter-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .newsletter-text p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .newsletter-form {
+      flex: 1;
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      border: 1px solid var(--border);
+      background: white;
+      padding: 0.85rem 1.2rem;
+      border-radius: 2px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-form input:focus { border-color: var(--accent); }
+    .newsletter-form input::placeholder { color: var(--muted); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer .nav-logo { font-size: 1rem; }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 6rem 2rem 3rem; }
+      .hero-right { height: 300px; }
+      .section { padding: 4rem 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .social-section { padding: 4rem 2rem; }
+      .newsletter { flex-direction: column; gap: 2rem; padding: 4rem 2rem; }
+      .newsletter-form { flex-direction: column; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">João Silva</a>
+    <ul class="nav-links">
+      <li><a href="#artigos">Artigos</a></li>
+      <li><a href="#redes">Redes</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <span class="hero-tag">✦ Blog Pessoal</span>
+      <h1 class="hero-title">Ideias que<br/><em>valem</em> a pena<br/>compartilhar.</h1>
+      <p class="hero-desc">Escrevo sobre tecnologia, produtividade e tudo que aprendo no caminho. Sem enrolação, só conteúdo que importa.</p>
+      <div class="hero-actions">
+        <a href="#artigos" class="btn-primary">Ler artigos</a>
+        <a href="#redes" class="btn-ghost">Me seguir</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-avatar">J</div>
+          <h3>João Silva</h3>
+          <p>Escritor • Entusiasta de tech</p>
+          <div class="hero-card-stats">
+            <div class="stat">
+              <span class="stat-num">48</span>
+              <span class="stat-label">Artigos</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">12k</span>
+              <span class="stat-label">Leitores</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="section" id="artigos">
+    <div class="section-header">
+      <h2 class="section-title">Artigos recentes</h2>
+      <a href="#" class="section-link">Ver todos →</a>
+    </div>
+    <div class="articles-grid">
+      <article class="article-card">
+        <div class="article-thumb t1">📝</div>
+        <div class="article-body">
+          <p class="article-tag">Produtividade</p>
+          <h3 class="article-title">Como organizo minha semana para escrever mais e melhor</h3>
+          <p class="article-meta">12 mai 2025 · 5 min de leitura</p>
+        </div>
+      </article>
+      <article class="article-card">
+        <div class="article-thumb t2">💡</div>
+        <div class="article-body">
+          <p class="article-tag">Tecnologia</p>
+          <h3 class="article-title">As ferramentas que uso todo dia e que mudaram meu fluxo</h3>
+          <p class="article-meta">3 mai 2025 · 7 min de leitura</p>
+        </div>
+      </article>
+      <article class="article-card">
+        <div class="article-thumb t3">🌱</div>
+        <div class="article-body">
+          <p class="article-tag">Reflexão</p>
+          <h3 class="article-title">O que aprendi depois de publicar 50 artigos online</h3>
+          <p class="article-meta">25 abr 2025 · 6 min de leitura</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section class="social-section" id="redes">
+    <h2 class="section-title">Me acompanhe</h2>
+    <p class="social-desc">Conteúdo diário nas redes. Escolha a sua favorita.</p>
+    <div class="social-grid">
+      <a href="#" class="social-card">
+        <span class="social-icon">𝕏</span>
+        <span>Twitter / X</span>
+      </a>
+      <a href="#" class="social-card">
+        <span class="social-icon">📸</span>
+        <span>Instagram</span>
+      </a>
+      <a href="#" class="social-card">
+        <span class="social-icon">in</span>
+        <span>LinkedIn</span>
+      </a>
+      <a href="#" class="social-card">
+        <span class="social-icon">▶</span>
+        <span>YouTube</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="newsletter-text">
+      <h2>Receba novos artigos<br/>no seu e-mail.</h2>
+      <p>Sem spam. Só os melhores textos, direto na sua caixa de entrada, toda semana.</p>
+    </div>
+    <div class="newsletter-form">
+      <input type="email" placeholder="seu@email.com" />
+      <a href="#" class="btn-primary" style="white-space:nowrap">Inscrever-se</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#" class="nav-logo">Henrique G. Corilaço</a>
+    <p>© 2025 · Feito com carinho</p>
+  </footer>
+
+</body>
+</html>
