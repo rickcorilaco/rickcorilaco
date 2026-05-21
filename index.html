@@ -9,12 +9,12 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #f7f5f2;
-      --text: #1a1a1a;
+      --bg: #0d0d0d;
+      --text: #f0f0f0;
       --muted: #888;
-      --accent: #c8a96e;
-      --card-bg: #ffffff;
-      --border: #e8e4df;
+      --accent: #f0c040;
+      --card-bg: #1a1a1a;
+      --border: #2a2a2a;
     }
 
     html { scroll-behavior: smooth; }
@@ -36,7 +36,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.4rem 4rem;
-      background: rgba(247,245,242,0.85);
+      background: rgba(13,13,13,0.9);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
       animation: fadeDown 0.6s ease both;
@@ -171,7 +171,7 @@
     .hero-visual {
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, #e8e2d8 0%, #d4c9b8 100%);
+      background: linear-gradient(135deg, #1a1a1a 0%, #111111 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -186,7 +186,7 @@
     }
 
     .hero-card {
-      background: white;
+      background: #1a1a1a;
       border-radius: 4px;
       padding: 2rem;
       width: 300px;
@@ -310,9 +310,9 @@
       font-size: 2.5rem;
     }
 
-    .article-thumb.t1 { background: linear-gradient(135deg, #f0ebe3, #e0d5c5); }
-    .article-thumb.t2 { background: linear-gradient(135deg, #e3eaf0, #c5d5e0); }
-    .article-thumb.t3 { background: linear-gradient(135deg, #e3f0e8, #c5e0cc); }
+    .article-thumb.t1 { background: linear-gradient(135deg, #1e1e1e, #2a2a2a); }
+    .article-thumb.t2 { background: linear-gradient(135deg, #1a1f24, #222c34); }
+    .article-thumb.t3 { background: linear-gradient(135deg, #1a2420, #222e28); }
 
     .article-body { padding: 1.5rem; }
 
@@ -339,14 +339,16 @@
 
     /* SOCIAL */
     .social-section {
-      background: var(--text);
-      color: white;
+      background: #111111;
+      color: var(--text);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       padding: 6rem 4rem;
       text-align: center;
     }
 
     .social-section .section-title {
-      color: white;
+      color: var(--text);
       margin-bottom: 0.75rem;
     }
 
@@ -422,7 +424,7 @@
     .newsletter-form input {
       flex: 1;
       border: 1px solid var(--border);
-      background: white;
+      background: var(--card-bg);
       padding: 0.85rem 1.2rem;
       border-radius: 2px;
       font-family: 'DM Sans', sans-serif;
