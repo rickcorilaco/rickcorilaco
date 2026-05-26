@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rickcorilaco.github.io/rickcorilaco/sitemap.xml
