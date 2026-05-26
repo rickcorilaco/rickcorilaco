@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oferta — Henrique Corilaço</title>
+  <meta name="description" content="Oferta selecionada por Henrique Corilaço com link de afiliado do Mercado Livre." />
+  <meta name="author" content="Henrique Corilaço" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="product" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -465,6 +472,30 @@
 
         document.title = `${oferta.nome} — Henrique Corilaço`;
         document.getElementById('breadcrumbNome').textContent = oferta.nome.length > 50 ? oferta.nome.substring(0, 50) + '...' : oferta.nome;
+
+        // SEO dinâmico
+        const baseUrl = 'https://rickcorilaco.github.io/rickcorilaco';
+        const pageUrl = `${baseUrl}/oferta.html?id=${oferta.uuid}`;
+        const imgUrl = oferta.imagem_hero ? `${baseUrl}/${oferta.imagem_hero}` : '';
+        const desc = `${oferta.nome} por R$ ${oferta.preco_por.toFixed(2).replace('.', ',')} — Oferta com link de afiliado do Mercado Livre.`;
+
+        document.querySelector('meta[name="description"]').setAttribute('content', desc);
+        document.querySelector('meta[property="og:type"]').setAttribute('content', 'product');
+
+        const setOrCreate = (sel, attr, val) => {
+          let el = document.querySelector(sel);
+          if (!el) { el = document.createElement('meta'); document.head.appendChild(el); }
+          el.setAttribute(attr, val);
+        };
+
+        setOrCreate('meta[property="og:url"]',         'content', pageUrl);
+        setOrCreate('meta[property="og:title"]',       'content', `${oferta.nome} — Henrique Corilaço`);
+        setOrCreate('meta[property="og:description"]', 'content', desc);
+        setOrCreate('meta[property="og:image"]',       'content', imgUrl);
+        setOrCreate('link[rel="canonical"]',           'href',    pageUrl);
+        setOrCreate('meta[name="twitter:title"]',      'content', `${oferta.nome} — Henrique Corilaço`);
+        setOrCreate('meta[name="twitter:description"]','content', desc);
+        setOrCreate('meta[name="twitter:image"]',      'content', imgUrl);
         app.innerHTML = renderProduct(oferta);
 
       } catch (err) {
