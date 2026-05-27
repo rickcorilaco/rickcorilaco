@@ -11,7 +11,7 @@
       "imagem_thumb": "imagens/chumbinho-thumb.jpg",
       "imagem_hero": "imagens/chumbinho-hero.jpg",
       "link_afiliado": "https://meli.la/1QrAoLD",
-      "cupom": null,
+      "cupom": "HENRIQUE10",
       "categorias": ["🎯 Airgun", "🏕️ Outdoor"],
       "especificacoes": [
         { "chave": "Marca",                  "valor": "Aurok" },
@@ -22,6 +22,75 @@
         { "chave": "Material",               "valor": "Chumbo" },
         { "chave": "Unidades por embalagem", "valor": "250 unidades" },
         { "chave": "Tipo de embalagem",      "valor": "Lata" }
+      ]
+    },
+    {
+      "uuid": "b2c3d4e5-0002-4f6a-9b0c-smartwatchxiaomi",
+      "slug": "smartwatch-xiaomi",
+      "nome": "Smartwatch Xiaomi Redmi Watch 4 Tela AMOLED GPS Integrado",
+      "badge": "💛 Cupom",
+      "preco_de": 649.00,
+      "preco_por": 399.00,
+      "desconto_pct": 38,
+      "imagem_thumb": null,
+      "imagem_hero": null,
+      "emoji": "⌚",
+      "link_afiliado": "#",
+      "cupom": "HENRIQUE10",
+      "categorias": ["⌚ Smartwatch", "📱 Tecnologia"],
+      "especificacoes": [
+        { "chave": "Marca",         "valor": "Xiaomi" },
+        { "chave": "Modelo",        "valor": "Redmi Watch 4" },
+        { "chave": "Tela",          "valor": "AMOLED" },
+        { "chave": "GPS",           "valor": "Integrado" },
+        { "chave": "Resistência",   "valor": "5 ATM" },
+        { "chave": "Bateria",       "valor": "até 20 dias" }
+      ]
+    },
+    {
+      "uuid": "c3d4e5f6-0003-4a7b-0c1d-lanternatica",
+      "slug": "lanterna-tatica",
+      "nome": "Lanterna Tática LED Recarregável 5000 Lumens Resistente à Água",
+      "badge": "🏕️ Outdoor",
+      "preco_de": 189.00,
+      "preco_por": 79.90,
+      "desconto_pct": 58,
+      "imagem_thumb": null,
+      "imagem_hero": null,
+      "emoji": "🔦",
+      "link_afiliado": "#",
+      "cupom": "HENRIQUE10",
+      "categorias": ["🏕️ Outdoor", "🔦 Iluminação"],
+      "especificacoes": [
+        { "chave": "Lúmens",        "valor": "5000 lm" },
+        { "chave": "Tipo de LED",   "valor": "CREE XHP50" },
+        { "chave": "Resistência",   "valor": "IPX6 (água)" },
+        { "chave": "Recarga",       "valor": "USB-C" },
+        { "chave": "Modos",         "valor": "5 modos de brilho" },
+        { "chave": "Alcance",       "valor": "até 500m" }
+      ]
+    },
+    {
+      "uuid": "d4e5f6a7-0004-4b8c-1d2e-cameratrilha4k",
+      "slug": "camera-trilha-4k",
+      "nome": "Câmera de Trilha 4K 30MP Visão Noturna Infravermelho IP66",
+      "badge": "🔥 Imperdível",
+      "preco_de": 520.00,
+      "preco_por": 289.90,
+      "desconto_pct": 44,
+      "imagem_thumb": null,
+      "imagem_hero": null,
+      "emoji": "📷",
+      "link_afiliado": "#",
+      "cupom": "HENRIQUE10",
+      "categorias": ["📷 Outdoor", "🏕️ Caça"],
+      "especificacoes": [
+        { "chave": "Resolução",       "valor": "4K / 30MP" },
+        { "chave": "Visão noturna",   "valor": "Infravermelho, até 20m" },
+        { "chave": "À prova d'água",  "valor": "IP66" },
+        { "chave": "Bateria",         "valor": "8 pilhas AA ou painel solar" },
+        { "chave": "Ângulo de visão", "valor": "120°" },
+        { "chave": "Armazenamento",   "valor": "Cartão SD até 128GB" }
       ]
     },
     {
@@ -36,7 +105,7 @@
       "imagem_hero": "imagens/cartao-sd-wd-hero.jpg",
       "link_afiliado": "https://meli.la/2upJbbB",
       "cupom": null,
-      "categorias": ["💾 Armazenamento"],
+      "categorias": ["💾 Armazenamento", "📷 Câmera de Trilha"],
       "especificacoes": [
         { "chave": "Marca",                    "valor": "Western Digital" },
         { "chave": "Modelo",                   "valor": "WD Purple" },
@@ -47,6 +116,33 @@
         { "chave": "Classe",                   "valor": "Class 10 / U1" },
         { "chave": "Resolução máx. de vídeo",  "valor": "Full HD" },
         { "chave": "Inclui adaptador SD",      "valor": "Não" }
+      ]
+    },
+    {
+      "uuid": "f6a7b8c9-0006-4d0e-3f4a-interruptornovadigital",
+      "slug": "interruptor-novadigital",
+      "nome": "Interruptor Inteligente Wifi Novadigital Mini 1CH 16A Alexa Smart Life Tuya",
+      "badge": "🔥 30% OFF",
+      "preco_de": 46.99,
+      "preco_por": 32.82,
+      "desconto_pct": 30,
+      "imagem_thumb": "imagens/interruptor-novadigital-thumb.jpg",
+      "imagem_hero": "imagens/interruptor-novadigital-hero.jpg",
+      "link_afiliado": "https://meli.la/28pUG1i",
+      "cupom": null,
+      "categorias": ["🏠 Casa Inteligente", "⚡ Automação"],
+      "especificacoes": [
+        { "chave": "Marca",                          "valor": "Novadigital" },
+        { "chave": "Modelo",                         "valor": "Mini 1CH 16A (ms-105)" },
+        { "chave": "Voltagem",                       "valor": "127/220V (AC 100-240V)" },
+        { "chave": "Corrente máxima",                "valor": "16A" },
+        { "chave": "Conectividade",                  "valor": "Wi-Fi IEEE 802.11 b/g/n 2,4GHz" },
+        { "chave": "Tipo de controle",               "valor": "Controle remoto via App Tuya" },
+        { "chave": "Assistentes compatíveis",        "valor": "Alexa, Smart Life, Tuya" },
+        { "chave": "Aplicações",                     "valor": "Automação residencial, Programação, Temporizador" },
+        { "chave": "Lâmpadas compatíveis",           "valor": "LED, Incandescentes" },
+        { "chave": "Dimensões",                      "valor": "4 × 4 × 2 cm" },
+        { "chave": "Homologação Anatel",             "valor": "11605-20-11765" }
       ]
     }
   ]
